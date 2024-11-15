@@ -1,0 +1,23 @@
+{
+  "name": "fs25-analyzer",
+  "version": "1.0.0",
+  "description": "A project to analyze every xml of cultures to check what is the best to do",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "tsc && node ./dist/index.js"
+  },
+  "keywords": [
+    "fs25"
+  ],
+  "author": "Velris",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0"
+  }
+}
