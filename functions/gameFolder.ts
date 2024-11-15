@@ -26,7 +26,7 @@ export const foliageToAnalyze: string[] = [
 ]
 
 export let foliageFolder: string = "/data/foliage/";
-export let seedXML: string = "/data/objects/bigBag/bigBag_seeds.xml";
+export let seedXML: string = "/data/objects/bigBag/seeds/bigBag_seeds.xml";
 export let sellPriceXML: string = "/data/maps/maps_fillTypes.xml";
 
 
@@ -45,9 +45,13 @@ async function AskForGameFolder(): Promise<string>  {
 }
 
 export async function InitializeGameFolder(): Promise<void> {
-    const gameFolder: string = await AskForGameFolder();
+    return new Promise<void>(async (resolve): Promise<void> => {
+        const gameFolder: string = await AskForGameFolder();
 
-    foliageFolder = gameFolder + foliageFolder;
-    seedXML = gameFolder + seedXML;
-    sellPriceXML = gameFolder + sellPriceXML;
+        foliageFolder = gameFolder + foliageFolder;
+        seedXML = gameFolder + seedXML;
+        sellPriceXML = gameFolder + sellPriceXML;
+
+        resolve();
+    });
 }

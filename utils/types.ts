@@ -1,8 +1,3 @@
-export enum windrowFillType {
-    NULL,
-    STRAW,
-}
-
 export type Culture = {
     name: string;
     windrow: {
@@ -26,4 +21,9 @@ export type Culture = {
         needRolling: boolean;
         litersPerSqm: number;
     }
+}
+
+export type Seed = {
+    price: number;
+    amount: number;
 }

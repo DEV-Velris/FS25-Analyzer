@@ -1,10 +1,8 @@
 import {InitializeGameFolder} from "./functions/gameFolder";
-import {ConvertFoliageXmlToObject} from "./functions/converter";
+import {ShowBestCultures} from "./functions/analyzer";
 
 async function Main(): Promise<void> {
-    await InitializeGameFolder();
-    const cultures = await ConvertFoliageXmlToObject();
-    console.log(cultures[10]);
+    await InitializeGameFolder().then(() => ShowBestCultures());
 }
 
 Main();
